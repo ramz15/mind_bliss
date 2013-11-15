@@ -3,23 +3,36 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
+
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  database: mindbliss
+  username: root
+  password: root
+  host: localhost
+  socket: /Applications/MAMP/tmp/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: sqlite3
+  adapter: postgresql
   database: db/test.sqlite3
   pool: 5
   timeout: 5000
 
+# production:
+#   adapter: postgresql
+#   database: db/production.sqlite3
+#   pool: 5
+#   timeout: 5000
+
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter:  postgresql
+  encoding: unicode
   pool: 5
-  timeout: 5000
+  database: d4hsl6g2cp0jbr
+  username: xuojxoidrmigle
+  password: zXNpxTA6bIKd78Tfwxd20CB3rQ
+  host: ec2-54-225-255-208.compute-1.amazonaws.com
+  port: 5432
