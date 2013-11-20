@@ -1,0 +1,188 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+@import "mixins/css3";
+@import "mixins/colors";
+
+// splash page main
+.home-logo {
+  background: image-url('logo_big.png') no-repeat;
+  width: 400px;
+  height: 75px;
+  margin: 20px auto 0px;
+}
+
+.brain {
+  width: 308px;
+  margin: 35px auto;
+  position: relative;
+  .brain-activity-1 {
+    height: 10px;
+    width: 10px;
+    background: #19D119;
+    @include box-round(15px);
+    @include box-shadow(0px, 0px, 20px, 10px, #19D119);
+    position: absolute;
+    right: 70px;
+    top: 80px;
+  }
+  .brain-activity-2 {
+    height: 10px;
+    width: 10px;
+    background: #FFD630;
+    @include box-round(15px);
+    @include box-shadow(0px, 0px, 20px, 10px, #FFD630);
+    position: absolute;
+    right: 205px;
+    top: 100px;
+  }
+  .brain-activity-3 {
+    height: 10px;
+    width: 10px;
+    background: #FF5C33;
+    @include box-round(15px);
+    @include box-shadow(0px, 0px, 20px, 10px, #FF5C33);
+    position: absolute;
+    right: 135px;
+    top: 150px;
+  }
+}
+
+.home-slogan  {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 32px;
+  width: 236px;
+  margin-top: 15px;
+}
+
+// devise login/reg 
+ul.auth-items {
+  list-style: none;	
+  margin: 10px;
+  padding: 0;
+  font-size: 14px;
+}
+
+ul.auth-items li {
+  display: inline;  
+}
+
+.login-col { float: right !important;}
+
+.login-link {
+  float: right;
+}
+
+.signup {
+  margin: 0px auto 50px;
+  width: 264px;
+}
+
+.button {
+  @include linear-gradient-bg(#8FDF8F, #16BC16);
+  background-color: #19D119;
+  @include box-round(2px);
+//  border: 1px solid #19D119;
+  display: inline-block;
+  color: white;
+  font-size: 24px;
+  font-weight: lighter;
+  padding: 15px 45px 15px 45px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #0B345C;
+  margin: 0px 0px 0px 0px;
+  cursor: pointer;
+  @include box-round(5px);
+  border: 1px solid #ccc;
+  @include box-shadow(0px, 4px, 5px, -4px, #999);
+  
+//  @include box-shadow(0px, 2px, 3px, -1px, #555);
+  font-family: 'Lato', "Helvetica Neue", Helvetica, Arial;
+  &.hover, &:hover { 
+    text-decoration: none; 
+    color: white;
+    background: #2E95D2;
+    @include linear-gradient-bg(#6DB5E0, #2986BD);
+    @include box-shadow(0px, 0px, 30px, 0px, #19D119);
+  }
+}
+
+.btn-line {
+  width: 100%;
+  height: 1px;
+  color: #EEE;
+  position: absolute;
+  top: 1px;
+}
+
+#signup_box, #login_box {
+  height: 255px;
+  width: 350px;
+  position: absolute;
+  left: 50%;
+  margin-left: -195px;
+  top: 50%;
+  margin-top: -145px;
+  background: white;
+  border: 5px solid #666;
+  @include box-round(4px);
+  padding: 20px;
+  font-family: 'Lato', "Helvetica Neue", Helvetica, Arial;
+  input {
+    font-family: 'Lato', "Helvetica Neue", Helvetica, Arial;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 10px;
+    width: 325px;
+  }
+  .signup-header {
+    text-align: center;
+    font-size: 24px;
+    background: $love_blue;
+    color: white;
+    padding: 15px;
+    position: relative;
+    top: -20px;
+    width: 360px;
+    left: -20px;
+  }
+  .signup-name {
+    height: 20px;
+    width: 145px;
+  }
+  .signup-first-name {
+    margin-right: 10px;
+  }
+  .signup-submit {
+    width: 347px;
+    margin-top: 10px;
+  }
+}
+
+.login-button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  background: $love_blue;
+  @include linear-gradient-bg(#6DB5E0, #2986BD);
+  
+}
+
+.logout {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+#login_box {
+  height: 190px;
+  .login-submit { width: 348px; }
+}

@@ -1,0 +1,27 @@
+<div class="modal-box" id="signup_box">
+  
+    <div class="login-header signup-header">SIGNUP</div>
+    
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+    
+    <span><%= f.text_field :first_name, :placeholder => "FIRST NAME", :class => "signup-first-name signup-name" %></span> 
+    <span><%= f.text_field :last_name, :placeholder => "LAST NAME", :class => "signup-last-name signup-name" %></span>
+
+      <div><%= f.email_field :email, :placeholder => "EMAIL ADDRESS" %></div>
+
+      <div><%= f.password_field :password, :placeholder => "PASSWORD" %></div>
+
+      <div><%= f.submit "CREATE MY ACCOUNT", :class => "button signup-submit" %></div>
+        
+    <% end %>
+    
+    <!-- <div class="login-line-left"></div>
+    <div class="login-or">or</div>
+    <div class="login-line-right"></div>
+  
+    <div class="fb-login-box">
+      <%#= link_to 'Login with facebook', user_omniauth_authorize_path(:facebook), { :class => 'signup-fb button', :id => 'facebook' } %>
+    </div> -->
+
+</div>

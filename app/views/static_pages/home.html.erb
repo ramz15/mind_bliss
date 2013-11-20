@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="span4">
+    <ul class="auth-items register-link">
+      <% if user_signed_in? %>
+        Welcome, <%= current_user.name %>
+      <% end %>
+      <%#= render 'devise/menu/registration_items' %>
+    </ul>
+  </div>
+  
+  <% if !user_signed_in? %>  
+    <div class="login">
+      <%= link_to('LOGIN', '#', :class => "login-button button", :id => "modal_show") %>
+    </div>
+  <% else %>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "logout") %>        
+  <% end %>
+
+</div>
+
+
+<div class="home-logo"></div>
+<div class="home-slogan">
+    create happiness
+</div>
+
+<div class="brain">
+  <div class="brain-activity-1"></div>
+  <div class="brain-activity-2"></div>
+  <div class="brain-activity-3"></div>
+  <%= image_tag(asset_path("brain_gradient_300px.png"), :class => "brain_image")%>
+</div>
+
+<div class="signup">
+  <div class="btn-line"></div>
+  <%= link_to('JOIN THE LOVE', '#', :class => "signup-button button", :id => "modal_show") %>
+</div>
+
+<%#= render 'home/login' %>
+<%#= render 'devise/registrations/signup' %>
+<%#= render 'devise/sessions/login' %>
+

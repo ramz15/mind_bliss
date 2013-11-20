@@ -1,0 +1,38 @@
+@mixin border-shadow-with-linear-transition($start_color, $duration) {
+  -webkit-transition: border linear $duration, box-shadow linear $duration;
+  -moz-transition: border linear $duration, box-shadow linear $duration;
+  -ms-transition: border linear $duration, box-shadow linear $duration;
+  -o-transition: border linear $duration, box-shadow linear $duration;
+  transition: border linear $duration, box-shadow linear $duration;
+  -webkit-box-shadow: inset 0 1px 3px $start_color;
+  -moz-box-shadow: inset 0 1px 3px $start_color;
+  box-shadow: inset 0 1px 3px $start_color;
+}
+@mixin border-with-shadow($from_color, $to_color) {
+  border-color: $to_color;
+  -webkit-box-shadow: inset 0 1px 3px $from_color, 0 0 8px $to_color;
+  -moz-box-shadow: inset 0 1px 3px $from_color, 0 0 8px $to_color;
+  box-shadow: inset 0 1px 3px $from_color, 0 0 8px $to_color;
+}
+@mixin box-shadow-transition($duration) {
+  -webkit-transition: border linear $duration, box-shadow linear $duration;
+  -moz-transition: border linear $duration, box-shadow linear $duration;
+  -ms-transition: border linear $duration, box-shadow linear $duration;
+  -o-transition: border linear $duration, box-shadow linear $duration;
+  transition: border linear $duration, box-shadow linear $duration;
+}
+@mixin transition($type, $direction:"", $duration:"") {
+  @if $type == 'none' {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+  } @else {
+    -webkit-transition: $type $direction $duration;
+    -moz-transition: $type $direction $duration;
+    -ms-transition: $type $direction $duration;
+    -o-transition: $type $direction $duration;
+    transition: $type $direction $duration;
+  }
+}
