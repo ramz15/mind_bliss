@@ -1,0 +1,71 @@
+<div class="row">
+  <!-- <div class="span4">
+    <ul class="auth-items register-link">
+      <%# if user_signed_in? %>
+        Welcome, <%#= current_user.name %>
+      <%# end %>
+      <%#= render 'devise/menu/registration_items' %>
+    </ul>
+  </div> -->
+  
+  <% if !user_signed_in? %>  
+    <div class="login">
+      <%= link_to('LOGIN', '#', :class => "login-button button", :id => "modal_show") %>
+    </div>
+  <% else %>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "logout") %>        
+  <% end %>
+
+</div>
+
+
+<div class="home-logo dash-logo"></div>
+<!-- <div class="home-slogan">
+    create happiness
+</div> -->
+<div class="pick-an-action">Pick one to increase your baseline happiness:</div>
+<div class="box-dash-container">
+  <div class="box-dream box-dash">
+    <div class="nav-dream nav-dash">Dream</div>
+    <div class="daily-dream daily-dash">Pursue your Dream</div>
+    <div class="science-dream science-dash"><%= image_tag(asset_path("brain_gradient_60px.png"), :class => "science-brain")%> science</div>
+  </div>
+
+  <div class="box-happiness box-dash">
+    <div class="nav-happiness nav-dash">Mind</div>
+    <div class="daily-happiness daily-dash">2 Minute Meditation</div>
+    <div class="science-happiness science-dash"><%= image_tag(asset_path("brain_gradient_60px.png"), :class => "science-brain")%> science</div>
+  </div>
+
+  <div class="box-loveall box-dash">
+    <div class="nav-loveall nav-dash">Love<span class="all-green">ALL</span></div>
+    <div class="daily-loveall daily-dash">Help a friend</div>
+    <div class="science-happiness science-dash"><%= image_tag(asset_path("brain_gradient_60px.png"), :class => "science-brain")%> science</div>
+
+  </div>
+
+</div>
+
+
+
+<div class="brain-container">
+  <div class="your-brain">
+    <%= @user.first_name %>'s Brain
+  </div>
+
+  <div class="total-brain-cells">
+    <div class="total-cells-title">
+      Brain Cells Activated
+    </div>
+    <div class="total-cells-num">
+      <%#= @user.brain.brain_cells %>
+    </div>
+  </div>
+  
+  <div class="user-brain">
+    <div class="brain-activity-1"></div>
+    <div class="brain-activity-2"></div>
+    <div class="brain-activity-3"></div>
+    <%= image_tag(asset_path("brain_gradient_300px.png"), :class => "brain-image")%>
+  </div>
+</div>

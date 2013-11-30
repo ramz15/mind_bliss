@@ -1,0 +1,173 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "mixins/css3";
+@import "mixins/colors";
+
+.brain-container {
+  width: 635px;
+  margin: 35px auto;
+  position: relative;
+  border: 1px solid #DDD;
+  .your-brain  {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Lato', arial, helvetica, sans-serif;
+    font-size: 34px;
+    width: auto;
+    margin-top: 18px;
+    color: #333;
+    text-align: center;
+    margin-bottom: -15px;
+    border-bottom: 1px solid #DDD;
+    padding: 0px 0px 23px 0px;
+
+  }
+  .user-brain {
+    margin-top: 0px !important;
+  }
+  .total-brain-cells {
+    font-family: 'Lato', arial, helvetica, sans-serif;
+    float: left;
+    font-size: 28px;
+    margin: 35px 10px;
+    padding: 7px 25px 0px 17px;
+    .total-cells-title {
+      
+    }
+    .total-cells-num {
+      font-size: 100px;
+      text-align: center;
+      margin: 90px 0px;
+    }
+  }
+  
+}
+
+.brain-image {
+  border-left: 1px solid #DDD;
+  margin-top: 15px;
+}
+
+
+
+.dash-logo {
+  margin-top: 8px !important;
+  
+}
+
+.box-dash-container {
+  position: relative;
+  left: 50%;
+  margin-left: -415px;
+  min-height: 90px;
+  width: 1000px;
+  margin-bottom: 60px;
+}
+
+.box-dash {
+  float: left;
+  float: left;
+  padding: 15px 20px;
+  margin: 5px 20px;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  @include box-round(5px);
+  &:hover { 
+/*    background: $love_blue; 
+    opacity: 0.7; */
+    border: 1px solid $logo_green;
+    @include box-shadow(0px, 0px, 7px, 0px, $love_green);
+    cursor: pointer;
+//    font-weight: 600; 
+  };
+}
+
+.nav-dash {
+  font-family: 'BenchNine', sans-serif, helvetica, arial;
+  font-size: 34px;
+  color: #999;
+  padding-bottom: 10px;
+/*  border-bottom: 1px solid #999;
+*/}
+
+.nav-dream, .nav-loveall, .nav-happiness {
+  color: $love_blue;
+}
+
+.science-dash {
+  font-size: 13px;
+  color: #aaa;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+/*  background: image-url('brain_gradient_60px.png') no-repeat ;
+*/  width: 200px;
+}
+
+.pick-an-action {
+  font-family: 'BenchNine', sans-serif, helvetica, arial;
+  text-align: center;
+  width: auto;
+  left: 50%;
+  margin-left: -15px;
+  font-size: 38px;
+  margin: 25px;
+
+}
+
+.science-brain {
+  height: 25px;
+
+}
+
+.all-green {
+  color: $logo_green;
+}
+
+// modals
+.love-modal {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 1060;
+  position: fixed;
+  top: 0px;
+}
+
+.love-close{
+  position: fixed;
+  top: 7px;
+  right: 9px;
+  color: white;
+  font-size: 30px;
+  background: black;
+  padding: 4px 8px 10px 9px;
+  background: #444;
+  @include box-round(15px);
+  &:hover { cursor: pointer; };
+}
+
+// mind modal
+.mind-modal-box {
+  width: 100%;
+  height: 100%;
+  z-index: 1061;
+  position: fixed;
+  top: 0px;
+  background: #222;
+  .meditation-image {
+    background: image-url('meditation_gold_temple.png') no-repeat;
+    width: 1000px;
+    height: 664px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}

@@ -3,13 +3,14 @@ class RegistrationsController < Devise::RegistrationsController
   before_filter :authenticate_user!, :except => [:create, :new]
   
   def new
-    @title = "LoveALLogy Signup"
+    @title = "MindBliss Signup"
   end
 
   def create
-    user = params[resource_name]
-    
-    @user = User.new(user)
+    puts params
+    user = params[:user]
+
+    @user = User.new(user_params)
 
     if @user.save
       # send welcome email to new user
@@ -42,6 +43,12 @@ class RegistrationsController < Devise::RegistrationsController
       redirect_to "/settings"
     end
       
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :password, :first_name, :last_name)
   end
 
 

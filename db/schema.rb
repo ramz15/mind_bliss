@@ -11,10 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131114103154) do
+ActiveRecord::Schema.define(version: 20131121002729) do
 
   create_table "users", force: true do |t|
     t.string   "name",                   limit: 64
+    t.string   "first_name",             limit: 32
+    t.string   "last_name",              limit: 32
     t.string   "email",                             default: "",    null: false
     t.string   "encrypted_password",                default: "",    null: false
     t.string   "reset_password_token"

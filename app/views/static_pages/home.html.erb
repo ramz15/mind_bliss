@@ -2,7 +2,7 @@
   <div class="span4">
     <ul class="auth-items register-link">
       <% if user_signed_in? %>
-        Welcome, <%= current_user.name %>
+        Welcome, <%= current_user.email %>
       <% end %>
       <%#= render 'devise/menu/registration_items' %>
     </ul>
@@ -37,6 +37,6 @@
 </div>
 
 <%#= render 'home/login' %>
-<%#= render 'devise/registrations/signup' %>
-<%#= render 'devise/sessions/login' %>
+<%= render 'devise/registrations/signup' %>
+<%= render 'devise/sessions/login' %>
 

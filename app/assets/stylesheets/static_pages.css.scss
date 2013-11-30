@@ -121,11 +121,11 @@ ul.auth-items li {
 }
 
 #signup_box, #login_box {
-  height: 255px;
+  height: 265px;
   width: 350px;
   position: absolute;
   left: 50%;
-  margin-left: -195px;
+  margin-left: -205px;
   top: 50%;
   margin-top: -145px;
   background: white;
@@ -153,10 +153,11 @@ ul.auth-items li {
   }
   .signup-name {
     height: 20px;
-    width: 145px;
+    width: 148px;
+    margin-bottom: 2px;
   }
   .signup-first-name {
-    margin-right: 10px;
+    margin-right: 2px;
   }
   .signup-submit {
     width: 347px;
@@ -183,6 +184,7 @@ ul.auth-items li {
 }
 
 #login_box {
-  height: 190px;
+  height: 150px;
+  top: 59%;
   .login-submit { width: 348px; }
 }

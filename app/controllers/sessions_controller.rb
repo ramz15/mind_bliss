@@ -1,7 +1,7 @@
 class SessionsController < Devise::SessionsController
 
   def new
-    @title = "LoveALLogy Login"
+    @title = "MindBliss Login"
   end  
 
   def create

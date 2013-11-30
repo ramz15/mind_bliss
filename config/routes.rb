@@ -1,4 +1,5 @@
 MindBliss::Application.routes.draw do
+  get "home/index"
   # devise_for :users
 
   devise_for :users,
@@ -23,7 +24,9 @@ MindBliss::Application.routes.draw do
 
   root :to => "static_pages#home"
 
+  get '/home' => 'home#index', :as => :logged_in_home
   get "static_pages/home"
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
