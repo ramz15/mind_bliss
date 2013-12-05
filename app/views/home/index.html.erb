@@ -25,6 +25,7 @@
 </div> -->
 <div class="pick-an-action">Brain Happiness Action of the Day:</div>
 
+  <%= render 'home/action_of_day' %>
 
 <div class="brain-container">
   <div class="your-brain">
@@ -36,7 +37,7 @@
       Brain Cells Activated
     </div>
     <div class="total-cells-num">
-      <%#= @user.brain.brain_cells %>
+      <%= @user.brain.brain_cells %>
     </div>
   </div>
   
@@ -57,13 +58,13 @@
 
   <div class="box-happiness box-dash">
     <div class="nav-happiness nav-dash">Mind</div>
-    <div class="daily-happiness daily-dash">2 Minute Meditation</div>
+    <div class="daily-happiness daily-dash">Create Inner Peace</div>
     <div class="science-happiness science-dash"><%= image_tag(asset_path("brain_gradient_60px.png"), :class => "science-brain")%> science</div>
   </div>
 
   <div class="box-loveall box-dash">
     <div class="nav-loveall nav-dash">Love<span class="all-green">ALL</span></div>
-    <div class="daily-loveall daily-dash">Help a friend</div>
+    <div class="daily-loveall daily-dash">Help a Friend</div>
     <div class="science-happiness science-dash"><%= image_tag(asset_path("brain_gradient_60px.png"), :class => "science-brain")%> science</div>
 
   </div>
