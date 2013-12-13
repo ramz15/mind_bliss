@@ -18,34 +18,30 @@
 
 </div>
 
+<div class="dash-logo">
+  <%= image_tag(asset_path("logo_small.png"), :class => "small-logo")%>
+</div>
 
-<div class="home-logo dash-logo"></div>
-<!-- <div class="home-slogan">
-    create happiness
-</div> -->
-<div class="pick-an-action">Brain Happiness Action of the Day:</div>
-
+<!-- <div class="pick-an-action">Brain Happiness Action of the Day:</div>
+ -->
   <%= render 'home/action_of_day' %>
 
 <div class="brain-container">
-  <div class="your-brain">
-    <%= @user.first_name %>'s Brain
+  
+  <div class="user-brain">
+    <div class="your-brain">
+      <%= @user.first_name %>'s Brain
+    </div>
+    <%= image_tag(asset_path("brain_gradient_300px.png"), :class => "brain-image")%>
   </div>
 
   <div class="total-brain-cells">
     <div class="total-cells-title">
-      Brain Cells Activated
+      Brain Points
     </div>
     <div class="total-cells-num">
-      <%= @user.brain.brain_cells %>
+      <%= @user.brain.points %>
     </div>
-  </div>
-  
-  <div class="user-brain">
-    <div class="brain-activity-1"></div>
-    <div class="brain-activity-2"></div>
-    <div class="brain-activity-3"></div>
-    <%= image_tag(asset_path("brain_gradient_300px.png"), :class => "brain-image")%>
   </div>
 </div>
 

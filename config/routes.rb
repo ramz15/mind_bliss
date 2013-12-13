@@ -27,6 +27,8 @@ MindBliss::Application.routes.draw do
 
   match '/about', to: 'static_pages#about', via: 'get'
 
+  match '/gratitudes', to: 'gratitudes#create', via: 'post'
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

@@ -1,3 +1,40 @@
 // Place all the styles related to the gratitudes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "mixins/css3";
+@import "mixins/colors";
+
+.gratitude-complete {
+  width: 700px;
+  margin: 35px auto 20px;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 32px;
+  text-align: center;
+  .gratitude-message { 
+  	margin-bottom: 15px;
+  	font-size: 28px;
+  	strong { font-size:28px; }
+  }
+  strong {
+    color: $logo_green;
+    font-size: 34px;
+  }
+  .gratitude-list {
+  	font-size: 18px;
+  	text-align: left;
+  }
+  .habit {
+  	font-size: 20px;
+		margin: 15px 0px 31px;
+		strong { font-size: 20px; }
+  }
+  .gratitude-body {
+  	font-size: 34px;
+		font-style: italic;
+		margin-bottom: 40px;
+		font-weight: bold;
+		color: $logo_green;
+
+  }
+}

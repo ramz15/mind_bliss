@@ -1,18 +1,32 @@
 <div class="action-of-day">
 	<div class="action-text">I am <strong>Grateful</strong> for...</div>
 
-	<form id="gratitude-form">
-		<textarea></textarea><br>
-		<input class="button submit-button" type="submit" value="Create Happiness">
+	<form id="gratitude_form">
+		<textarea id="gratitude_text"></textarea><br>
+		<input class="button submit-button" value="Create Happiness">
 	</form>
 
-<!-- 	<div class="science-box">
-		<div class="science-happiness science-dash action-science"><%#= image_tag(asset_path("brain_gradient_60px.png"), :class => "science-brain")%>Gratitude Creates:
+	<div class="science-box">
+<!-- 		<div class="brain-points"><strong>100</strong><div class="cell">Brain Points</div> </div> -->
+		<div class="science-happiness science-dash action-science">
+			Gratitude Creates:
 		</div>
-		<div class="science-stat">Dopamine: <strong>250</strong></div>
-		<div class="science-stat">Brain Cells: <strong>500</strong></div>
-		<div class="science-stat">Improves: <strong>Happiness, Relaxation</strong></div>
+		<div class="science-stat"><strong>Happiness</strong><div class="cell"></div></div>
+		<div class="science-stat"><strong>Better Sleep</strong><div class="cell"></div> </div>
+		<div class="science-stat"><strong>Optimism</strong><div class="cell"></div> </div>
+	</div>
+	<div class="proof-box">
+		<a href="http://www.psychologytoday.com/blog/prefrontal-nudity/201211/the-grateful-brain" target="_blank">
+			<%= image_tag(asset_path("brain_gradient_60px.png"), :class => "science-brain")%>
+			Science
+		</a>
+	</div>
+
+<!-- 	<div class="points-box">
+		<div class="plus">+</div>
+		<strong>100</strong></br> Brain Points
 	</div> -->
+
 
 
 </div>

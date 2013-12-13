@@ -3,6 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
+  csrf = $('meta[name="csrf-token"]').attr('content')
+
   $('.box-happiness').click ->
     $('body').append('<div class="love-modal"></div>')
     $('body').append('<div class="mind-modal-box"><div class="meditation-image"></div><div class="love-close">x</div></div>')
