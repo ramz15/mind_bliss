@@ -25,6 +25,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    angularjs-rails (1.2.7)
     arel (4.0.1)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
@@ -62,6 +63,9 @@ GEM
     execjs (2.0.2)
     ffi (1.9.3)
     formatador (0.2.4)
+    gon (5.0.1)
+      actionpack (>= 2.3.0)
+      json
     growl (1.0.3)
     guard (2.2.4)
       formatador (>= 0.2.4)
@@ -107,6 +111,8 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    rabl (0.9.3)
+      activesupport (>= 2.3.14)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -206,11 +212,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angularjs-rails
   bootstrap-sass (= 2.3.2.0)
   capybara (= 2.1.0)
   childprocess (= 0.3.9)
   coffee-rails (= 4.0.1)
   devise
+  gon
   growl (= 1.0.3)
   guard-rspec (= 2.5.0)
   guard-spork (= 1.5.0)
@@ -218,6 +226,7 @@ DEPENDENCIES
   jquery-rails (= 3.0.4)
   mysql2
   pg (= 0.15.1)
+  rabl
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
   rspec-rails (= 2.13.1)

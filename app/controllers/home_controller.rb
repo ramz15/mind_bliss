@@ -5,6 +5,9 @@ class HomeController < ApplicationController
   def index
     @title = "MindBliss"
     @user = current_user
+
+    gon.user = @user
+    gon.brain = @user.brain
   end
 
 
