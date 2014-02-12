@@ -1,0 +1,49 @@
+<div ng-hide="actionComplete" class="action-of-day">
+	<div class="action-text">Who do you <strong>love</strong> very much and why? </div>
+
+	<form id="action_form" name="sendloveForm" ng-submit="saveSendlove()">
+		<textarea id="action_text" ng-model="sendloveBody" required></textarea><br>
+<!-- 		<span class="error" ng-show="gratitudeForm.gratitude.$error.required">
+      Can't be empty!</span><br> -->
+    <div class="action-small-text">Make their day and send it to them, enter their email:</div>
+    <input type="email" class="action-email" placeholder="Email"><br>
+		<input type="submit" class="button submit-button" value="Send Love">
+	</form>
+
+	<div class="science-box">
+<!-- 		<div class="brain-points"><strong>100</strong><div class="cell">Brain Points</div> </div> -->
+		<div class="science-happiness science-dash action-science">
+			Sending Love Creates:
+		</div>
+		<div class="science-stat"><strong>Loving Realtionships</strong><div class="cell"></div></div>
+		<div class="science-stat"><strong>Happiness for you both</strong><div class="cell"></div> </div>
+	</div>
+	<div class="proof-box">
+		<a href="http://blogs.berkeley.edu/2013/01/03/the-past-years-top-10-scientific-insights-about-living-a-meaningful-life/" target="_blank">
+			<img alt="Brain gradient 60px" class="science-brain" src="/assets/brain_gradient_60px.png">
+			Science
+		</a>
+	</div>
+
+<!-- 	<div class="points-box">
+		<div class="plus">+</div>
+		<strong>100</strong></br> Brain Points
+	</div> -->
+</div>
+
+<!-- ANIMATIONS after COMPLETE -->
+<div class="points-anime" ng-class="{startanimate: actionComplete}" >100</div>
+<div ng-show="actionComplete" class="brain-activity"></div>
+
+
+<!-- TEMPLATE after ACTION is COMPLETE -->
+<div ng-show="actionComplete" class="gratitude-complete">
+	<div class="hardwire">Hardwire Happiness:</div>
+	<div class="habit">Feel the <strong>love!</strong> You just <strong>hardwired love</strong> and <strong>happiness</strong> into your loved one's brains and your own!</div>
+
+<!-- 	<div class="gratitude-body"></div>
+ -->
+
+	<!-- 	<div class="cells-activated">100 of your positive brain cells have been activated!</div> -->
+
+</div>

@@ -1,6 +1,6 @@
 class GratitudesController < ApplicationController
 
-	before_filter :authenticate_user!
+	# before_filter :authenticate_user!
 
 	def create
 		@user = current_user
@@ -23,10 +23,10 @@ class GratitudesController < ApplicationController
         if success
           res[:gratitude] = params[:body]
           res[:points] = 100
-          res[:html] = render_to_string({ :partial => '/gratitudes/gratitude_complete',
-                                					# :locals  => { :comments => @comments },
-                                					:formats => [:html],
-                                					:layout  => false })
+        #   res[:html] = render_to_string({ :partial => '/gratitudes/gratitude_complete',
+        #                         					# :locals  => { :comments => @comments },
+        #                         					:formats => [:html],
+        #                         					:layout  => false })
         end
         render :json => res.as_json
       }

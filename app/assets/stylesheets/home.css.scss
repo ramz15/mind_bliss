@@ -11,7 +11,7 @@
 @import "mixins/colors";
 
 .brain-container {
-  width: 710px;
+  width: 730px;
   margin: 25px auto;
   position: relative;
   border-top: 1px solid #ddd;
@@ -202,6 +202,7 @@
   font-family: 'Lato', arial, helvetica, sans-serif;
   font-size: 32px;
   text-align: center;
+  line-height: 30px;
   strong {
     color: $logo_green;
     font-size: 34px;
@@ -211,6 +212,10 @@
     width: 450px;
     height: 60px;
     font-size: 16px;
+  }
+  .action-small-text {
+    font-size: 20px;
+    margin: 10px;
   }
 
   .science-box {
@@ -258,19 +263,4 @@
     position: relative;
     left: -27px;
   }
-}
-
-// points animation
-.points-anime {
-  position: absolute;
-  top: 450px;
-  left: 42%;
-  font-size: 16px;
-  color: $logo_green; 
-  font-family: 'Lato', arial, helvetica, sans-serif;
-}
-
-.brain-activity-gratitude {
-  left: 294px;
-  top: 205px !important;
 }

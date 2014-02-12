@@ -29,6 +29,20 @@ MindBliss::Application.routes.draw do
 
   match '/gratitudes', to: 'gratitudes#create', via: 'post'
 
+  resources :brains
+
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      resources :brains, :only => [:update]
+      # resources :tokens, :only => [:create, :destroy]
+    end
+
+    # and in the future...
+    # namespace :v2 do
+    #   resources :collections
+    # end
+  end
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
