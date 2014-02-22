@@ -1,22 +1,23 @@
 <div ng-hide="actionComplete" class="action-of-day">
-	<div class="action-text">Who do you <strong>love</strong> very much and why? </div>
-
+	<div class="action-text">1. Name someone you <strong>love</strong> very much:</div>
 	<form id="action_form" name="sendloveForm" ng-submit="saveSendlove()">
-		<textarea id="action_text" ng-model="sendloveBody" required></textarea><br>
+		<input type="text" class="action-name" ng-model="sendloveName" placeholder="Name"><br>
+		<div class="action-text">2. What do you <strong>love</strong> about them?</div>
+		<textarea id="action_text" class="sendlove-textarea" ng-model="sendloveBody" ng-focus="updateSendloveName()" required></textarea><br>
 <!-- 		<span class="error" ng-show="gratitudeForm.gratitude.$error.required">
       Can't be empty!</span><br> -->
-    <div class="action-small-text">Make their day and send it to them, enter their email:</div>
-    <input type="email" class="action-email" placeholder="Email"><br>
+    <div class="action-text">3. Make <b>{{newSendloveName}}</b> really <strong>happy</strong>, send the <strong>love</strong> to <b>{{newSendloveName}}</b>:</div>
+    <input type="email" ng-model="sendloveEmail" class="action-name sendlove-email" placeholder="Email"><br>
 		<input type="submit" class="button submit-button" value="Send Love">
 	</form>
 
 	<div class="science-box">
 <!-- 		<div class="brain-points"><strong>100</strong><div class="cell">Brain Points</div> </div> -->
-		<div class="science-happiness science-dash action-science">
+<!-- 		<div class="science-happiness science-dash action-science">
 			Sending Love Creates:
 		</div>
 		<div class="science-stat"><strong>Loving Realtionships</strong><div class="cell"></div></div>
-		<div class="science-stat"><strong>Happiness for you both</strong><div class="cell"></div> </div>
+		<div class="science-stat"><strong>Happiness for you both</strong><div class="cell"></div> </div> -->
 	</div>
 	<div class="proof-box">
 		<a href="http://blogs.berkeley.edu/2013/01/03/the-past-years-top-10-scientific-insights-about-living-a-meaningful-life/" target="_blank">
@@ -39,7 +40,7 @@
 <!-- TEMPLATE after ACTION is COMPLETE -->
 <div ng-show="actionComplete" class="gratitude-complete">
 	<div class="hardwire">Hardwire Happiness:</div>
-	<div class="habit">Feel the <strong>love!</strong> You just <strong>hardwired love</strong> and <strong>happiness</strong> into your loved one's brains and your own!</div>
+	<div class="habit">Feel the <strong>love!</strong> You just <strong>hardwired love</strong> and <strong>happiness</strong> into your loved one's brain and your own!</div>
 
 <!-- 	<div class="gratitude-body"></div>
  -->

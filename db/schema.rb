@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204002249) do
+ActiveRecord::Schema.define(version: 20140220002025) do
 
   create_table "brains", force: true do |t|
     t.integer  "user_id"
-    t.integer  "points",       default: 0
+    t.integer  "points",         default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "action_count", default: 0
+    t.integer  "action_count",   default: 0
+    t.integer  "sendlove_count", default: 0
   end
+
+  add_index "brains", ["user_id"], name: "index_brains_on_user_id", using: :btree
 
   create_table "gratitudes", force: true do |t|
     t.integer  "user_id"
@@ -27,6 +30,22 @@ ActiveRecord::Schema.define(version: 20140204002249) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "gratitudes", ["user_id"], name: "index_gratitudes_on_user_id", using: :btree
+
+  create_table "sendloves", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "receiver_id"
+    t.text     "body"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name",        limit: 50
+  end
+
+  add_index "sendloves", ["email"], name: "index_sendloves_on_email", using: :btree
+  add_index "sendloves", ["receiver_id"], name: "index_sendloves_on_receiver_id", using: :btree
+  add_index "sendloves", ["user_id"], name: "index_sendloves_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name",                   limit: 64

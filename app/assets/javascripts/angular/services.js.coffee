@@ -23,8 +23,8 @@ mindblissServices.factory "Gratitude", [
 mindblissServices.factory "Sendlove", [
   "$resource"
   ($resource) ->
-    return (sendloveBody, sendloveEmail) ->
-      $resource("/sendlove.json", {body: sendloveBody, email: sendloveEmail},
+    return (sendloveBody, sendloveName, sendloveEmail) ->
+      $resource("/sendloves.json", {name:sendloveName, body: sendloveBody, email: sendloveEmail},
         save:
           method: "POST"
       )

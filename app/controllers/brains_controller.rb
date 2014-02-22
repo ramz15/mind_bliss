@@ -13,7 +13,7 @@ class BrainsController < ApplicationController
   private
 
   def brain_params
-    params.require(:brain).permit(:user_id, :points, :action_count)
+    params.require(:brain).permit(:user_id, :points, :action_count, :sendloves_count)
   end
 
 end

@@ -30,6 +30,7 @@ MindBliss::Application.routes.draw do
   match '/gratitudes', to: 'gratitudes#create', via: 'post'
 
   resources :brains
+  resources :sendloves
 
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do

@@ -29,4 +29,7 @@ MindBliss::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'mind.dev:3000' }
 
+  # Email sender Mandrill API key
+  config.mandrill_api_key = "1jWTexcz9Fz67D0_dFAoEA"
+
 end

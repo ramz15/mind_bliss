@@ -77,4 +77,9 @@ MindBliss::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Email sender Mandrill API key
+  config.mandrill_api_key = "1jWTexcz9Fz67D0_dFAoEA"
+
+
 end

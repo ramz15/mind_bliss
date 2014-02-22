@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_one  :brain
   has_many :gratitudes
+  has_many :sendloves
+  has_many :received_loves, foreign_key: "receiver_id", class_name: "Sendlove"
   after_create :create_user_brain
 
   def create_user_brain

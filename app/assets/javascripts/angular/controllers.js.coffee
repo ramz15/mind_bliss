@@ -1,4 +1,4 @@
-@mindbliss.controller 'HomeCtrl', ['$scope', "Gratitude", "Brain", ($scope, Gratitude, Brain) ->
+@mindbliss.controller 'HomeCtrl', ['$scope', "Gratitude", "Brain", "Sendlove", ($scope, Gratitude, Brain, Sendlove) ->
 	# set $scope objects user and brain
 	$scope.user = gon.user
 	$scope.brain = gon.brain
@@ -6,7 +6,7 @@
 
 	# all action templates array
 	$scope.templates =
-		[ { name: 'gratitude', url: '/templates/gratitude.html', urlComplete: '/templates/gratitude_complete.html'}
+		[ { name: 'gratitude', url: '/templates/sendlove.html', urlComplete: '/templates/gratitude_complete.html'}
 		, { name: 'sendlove', url: '/templates/sendlove.html'} 
 		# , { name: 'meditation', url: '/templates/meditation.html'}
 		# , { name: 'workout', url: '/templates/workout.html'}
@@ -34,11 +34,18 @@
 			$scope.brain.points += 100
 		return
 
+	$scope.newSendloveName = "them"
+
+	$scope.updateSendloveName = ->
+		if this.sendloveName
+			$scope.newSendloveName = this.sendloveName
+		return
+
 	# save sendlove
-	# $scope.saveSendlove = ->
-	# 	if this.sendloveBody
-	# 		$scope.actionComplete = true
-	# 		Sendlove({this.sendloveBody, this.sendloveEmail}).save()
-	# 		$scope.brain.points += 100
-	# 	return
+	$scope.saveSendlove = ->
+		if this.sendloveBody
+			$scope.actionComplete = true
+			Sendlove(this.sendloveBody, this.sendloveName, this.sendloveEmail).save()
+			$scope.brain.points += 100
+		return
 ]
