@@ -5,7 +5,6 @@ class Sendlove < ActiveRecord::Base
 		require 'mandrill'
 
 		begin
-			puts sender_name
 	    mandrill = Mandrill::API.new Rails.application.config.mandrill_api_key
 	    template_name = "sendlove"
 	    template_content = []#[{"RECEIVER_NAME"=>self.name, "body"=>self.body, "SENDER_NAME"=>sender_name, "email"=>self.email}]
