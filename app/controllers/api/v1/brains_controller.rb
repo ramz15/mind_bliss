@@ -15,6 +15,4 @@ class Api::V1::BrainsController < ActionController::Base
     end
   end
 
-	end
-
 end
