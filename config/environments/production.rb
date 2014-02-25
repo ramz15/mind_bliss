@@ -81,5 +81,7 @@ MindBliss::Application.configure do
   # Email sender Mandrill API key
   config.mandrill_api_key = "1jWTexcz9Fz67D0_dFAoEA"
 
+  config.host_url = 'www.mindbliss.me'
+  config.action_controller.asset_host = 'www.mindbliss.me'
 
 end
