@@ -1,2 +1,0 @@
-class InboundEmailController < ApplicationController
-end

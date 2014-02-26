@@ -256,9 +256,21 @@
   }
 }
 
+.science-brain { 
+  background: image-url('brain_gradient_60px.png') no-repeat;
+  width: 60px;
+  height: 48px;
+  display: inline-block;
+  margin-right: 1px;
+  top: 15px;
+  position: relative;
+}
+
 .proof-box {
   font-size: 18px;
   margin-top: 10px;
+  position: relative;
+  top: -10px;
   a { text-decoration: none; color: $over_bg_color; }
 }
 
