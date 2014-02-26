@@ -8,7 +8,7 @@ class HomeController < ApplicationController
 
     gon.user = @user
     gon.brain = @user.brain
+    gon.logged_in = true
   end
-
 
 end

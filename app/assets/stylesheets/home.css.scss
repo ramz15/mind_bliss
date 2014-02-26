@@ -43,7 +43,11 @@
     position: relative;
     .brain-image {
       width: 460px;
-}
+      height: 413px;
+      background: image-url('brain_gradient_460px.png') no-repeat;
+      right: 10px;
+      position: relative;
+    }
   }
   .total-brain-cells {
     font-family: 'Lato', arial, helvetica, sans-serif;
@@ -69,9 +73,11 @@
 }
 
 
-
 .dash-logo {
-  margin-top: 8px !important;
+  background: image-url('logo_small.png') no-repeat;
+  width: 200px;
+  height: 50px;
+  margin: 20px auto 0px;
   .small-logo { margin: 0px auto; display: block; }
 }
 
@@ -134,11 +140,6 @@
   margin-left: -15px;
   font-size: 38px;
   margin: 20px 0px 40px;
-}
-
-.science-brain {
-  height: 35px;
-
 }
 
 .all-green {
@@ -209,7 +210,6 @@
   }
   b {
     color: $love_blue;
-    font-size: 34px;
   }
   textarea {
     margin-top: 22px;
@@ -245,7 +245,13 @@
       position: relative;
       top: -16px;
       font-weight: bold;
-      .science-brain { height: 40px; margin-right: 6px;}
+      .science-brain { 
+        background: image-url('brain_gradient_60px.png') no-repeat;
+        width: 60px;
+        height: 40px;
+        display: block;
+        margin-right: 6px;
+      }
     }
   }
 }

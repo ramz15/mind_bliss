@@ -2,8 +2,11 @@ class StaticPagesController < ApplicationController
 
 	before_filter :if_logged_in
 
+  layout 'not_logged_in'
+
   def home
   	@title = "MindBliss"
+    gon.logged_in = false
   end
 
   def about
