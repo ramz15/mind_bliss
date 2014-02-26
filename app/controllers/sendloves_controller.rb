@@ -21,7 +21,7 @@ class SendlovesController < ApplicationController
 		# update user Brain points
 		if success
 			@user.brain.add_points(100)
-			@sendlove.send_email(@user.first_name + " " + @user.last_name)
+			@sendlove.send_email(@user.first_name, @user.last_name)
 		end
 
     respond_to do |format|

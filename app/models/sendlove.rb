@@ -1,23 +1,26 @@
 class Sendlove < ActiveRecord::Base
 	belongs_to :user
 
-	def send_email(sender_name)
+	# Mandrill API email message 
+	def send_email(sender_first_name, sender_last_name)
 		require 'mandrill'
+
+		full_name = sender_first_name + " " + sender_last_name
 
 		begin
 	    mandrill = Mandrill::API.new Rails.application.config.mandrill_api_key
 	    template_name = "sendlove"
-	    template_content = []#[{"RECEIVER_NAME"=>self.name, "body"=>self.body, "SENDER_NAME"=>sender_name, "email"=>self.email}]
-	   	subject = "#{self.name}, #{sender_name} is going to make your week with these kind words..."
-	    message = {"headers"=>{"Reply-To"=>"sendlove@mindbliss.herokuapp.com"},
-	     "global_merge_vars"=>[{"name" => "name","content"=> self.name}, {"name" => "body", "content"=> self.body}, {"name"=> "sendername", "content"=> sender_name}, {"name"=> "sendword", "content"=> "Love"}],
+	    template_content = []
+	   	subject = "#{self.name}, #{sender_first_name} is going to make your week with these kind words..."
+	    message = {"headers"=>{"Reply-To"=>"sendlove@mindbliss.me"},
+	     "global_merge_vars"=>[{"name" => "name","content"=> self.name}, {"name" => "body", "content"=> self.body}, {"name"=> "firstname", "content"=> sender_first_name}, {"name"=> "lastname", "content"=> sender_last_name}, {"name"=> "sendword", "content"=> "Love"}],
 	     "track_clicks"=>nil,
-	     "from_name"=>sender_name,
+	     "from_name"=>full_name,
 	     "tracking_domain"=>nil,
 	     "text"=>self.body,
 	     # "subaccount"=>"customer-123",
 	     "return_path_domain"=>nil,
-	     "metadata"=>{"website"=>"mindbliss.herokuapp.com"},
+	     "metadata"=>{"website"=>"mindbliss.me"},
 	     "url_strip_qs"=>nil,
 	     # "merge_vars"=>
 	     #    [{"vars"=>[{"content"=>"merge2 content", "name"=>"merge2"}],
@@ -36,7 +39,7 @@ class Sendlove < ActiveRecord::Base
 	     "subject"=>subject,
 	     # "google_analytics_domains"=>["example.com"],
 	     "tags"=>["password-resets"],
-	     "from_email"=>"sendlove@mindbliss.herokuapp.com",
+	     "from_email"=>"sendlove@mindbliss.me",
 	     # "html"=>"<p>Example HTML content</p>",
 	     # "recipient_metadata"=>
 	     #    [{"values"=>{"user_id"=>123456}, "rcpt"=>"recipient.email@example.com"}],
