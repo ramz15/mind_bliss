@@ -54,6 +54,11 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
+# heroku performance monitoring
+gem 'newrelic_rpm'
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
