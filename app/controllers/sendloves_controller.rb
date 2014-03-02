@@ -1,6 +1,6 @@
 class SendlovesController < ApplicationController
 
-	before_filter :authenticate_user!
+	before_filter :authenticate_user!, :except => [:reply]
 
 	def create
 		@user = current_user
@@ -21,25 +21,23 @@ class SendlovesController < ApplicationController
 		# update user Brain points
 		if success
 			@user.brain.add_points(100)
-			@sendlove.send_email(@user.first_name, @user.last_name)
+			@sendlove.send_email(@user.first_name, @user.last_name, @user.id)
 		end
 
     respond_to do |format|
       format.json {
         res = { :success => success }
-        if success
-          res[:sendlove_body] = params[:body]
-          res[:points] = 100
-        #   res[:html] = render_to_string({ :partial => '/gratitudes/gratitude_complete',
-        #                         					# :locals  => { :comments => @comments },
-        #                         					:formats => [:html],
-        #                         					:layout  => false })
-        end
         render :json => res.as_json
       }
       format.js
     end
 	end
+
+  def reply
+  	gon.user = {"first_name" => params[:name]}
+    gon.brain = {"points" => 0}
+    gon.logged_in = true
+  end
 
 	private
 

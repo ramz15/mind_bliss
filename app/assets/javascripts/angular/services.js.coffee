@@ -30,3 +30,13 @@ if gon.logged_in
             method: "POST"
         )
   ]
+
+  mindblissServices.factory "Signup", [
+    "$resource"
+    ($resource) ->
+      return (first_name, last_name, email, password) ->
+        $resource("/reply_signup.json", {first_name:first_name, last_name: last_name, email: email, pw:password},
+          save:
+            method: "POST"
+        )
+  ]

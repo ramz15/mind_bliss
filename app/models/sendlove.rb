@@ -2,7 +2,7 @@ class Sendlove < ActiveRecord::Base
 	belongs_to :user
 
 	# Mandrill API email message 
-	def send_email(sender_first_name, sender_last_name)
+	def send_email(sender_first_name, sender_last_name, sender_id)
 		require 'mandrill'
 
 		full_name = sender_first_name + " " + sender_last_name
@@ -13,7 +13,15 @@ class Sendlove < ActiveRecord::Base
 	    template_content = []
 	   	subject = "#{self.name}, #{sender_first_name} is going to make your week with these kind words..."
 	    message = {"headers"=>{"Reply-To"=>"sendlove@mindbliss.me"},
-	     "global_merge_vars"=>[{"name" => "name","content"=> self.name}, {"name" => "body", "content"=> self.body}, {"name"=> "firstname", "content"=> sender_first_name}, {"name"=> "lastname", "content"=> sender_last_name}, {"name"=> "sendword", "content"=> "Love"}],
+	     "global_merge_vars"=>[
+	     	{"name" => "name","content"=> self.name}, 
+	     	{"name" => "body", "content"=> self.body}, 
+	     	{"name"=> "firstname", "content"=> sender_first_name}, 
+	     	{"name"=> "lastname", "content"=> sender_last_name}, 
+	     	{"name"=> "sendword", "content"=> "Love"}, 
+	     	{"name"=> "email", "content"=> self.email}, 
+	     	{"name"=> "senderid", "content"=> sender_id}
+	     ],
 	     "track_clicks"=>nil,
 	     "from_name"=>full_name,
 	     "tracking_domain"=>nil,

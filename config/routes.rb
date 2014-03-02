@@ -32,6 +32,8 @@ MindBliss::Application.routes.draw do
   resources :brains
   resources :sendloves
 
+  get '/sendlove_reply' => 'sendloves#reply'
+
   namespace :inbound do
     match '/sendlove', to: 'inbound_emails#sendlove', via: 'post'
   end

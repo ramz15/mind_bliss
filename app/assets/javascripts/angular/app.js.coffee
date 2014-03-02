@@ -5,11 +5,19 @@ if gon.logged_in
   	"mindblissServices"
   ])
 
+
+  # setup angular routes 
   @mindbliss.config(['$routeProvider', ($routeProvider) ->
     $routeProvider.
+      when('/sendlove_reply', {
+        templateUrl: '/templates/sendlove_reply.html',
+        controller: 'ReplyCtrl'
+      }).
       otherwise({
-        templateUrl: '/templates/home.html.erb',
-        controller: 'HomeCtrl'
+        templateUrl: '/templates/sendlove_reply.html',
+        controller: 'ReplyCtrl'
+        # templateUrl: '/templates/home.html',
+        # controller: 'HomeCtrl'
       }) 
   ])
 
@@ -18,4 +26,5 @@ if gon.logged_in
     csrfToken = angular.element(document).find('meta[name=csrf-token]').attr('content')
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = csrfToken
   ]
+
 
