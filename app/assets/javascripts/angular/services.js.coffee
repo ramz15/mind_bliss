@@ -24,8 +24,8 @@ if gon.logged_in
   mindblissServices.factory "Sendlove", [
     "$resource"
     ($resource) ->
-      return (sendloveBody, sendloveName, sendloveEmail) ->
-        $resource("/sendloves.json", {name:sendloveName, body: sendloveBody, email: sendloveEmail},
+      return (sendloveBody, sendloveName, sendloveEmail, sendToId) ->
+        $resource("/sendloves.json", {name:sendloveName, body: sendloveBody, email: sendloveEmail, send_to_id: sendToId},
           save:
             method: "POST"
         )
@@ -34,8 +34,28 @@ if gon.logged_in
   mindblissServices.factory "Signup", [
     "$resource"
     ($resource) ->
-      return (first_name, last_name, email, password) ->
-        $resource("/reply_signup.json", {first_name:first_name, last_name: last_name, email: email, pw:password},
+      return (first_name, email, password) ->
+        $resource("/api/v1/api_users.json", {first_name:first_name, email: email, pw: password},
+          save:
+            method: "POST"
+        )
+  ]
+
+  mindblissServices.factory "SendloveReply", [
+    "$resource"
+    ($resource) ->
+      return (sendloveBody, sendloveName, sendloveEmail) ->
+        $resource("/sendlovereply.json", {name:sendloveName, body: sendloveBody, email: sendloveEmail},
+          save:
+            method: "POST"
+        )
+  ]
+
+  mindblissServices.factory "Dream", [
+    "$resource"
+    ($resource) ->
+      return (title, minutes_per_week) ->
+        $resource("/dreams.json", {title: title, minutes_per_week: minutes_per_week},
           save:
             method: "POST"
         )

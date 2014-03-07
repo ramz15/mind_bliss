@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220002025) do
+ActiveRecord::Schema.define(version: 20140307001157) do
 
   create_table "brains", force: true do |t|
     t.integer  "user_id"
@@ -23,6 +23,20 @@ ActiveRecord::Schema.define(version: 20140220002025) do
   end
 
   add_index "brains", ["user_id"], name: "index_brains_on_user_id", using: :btree
+
+  create_table "dreams", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.integer  "minutes"
+    t.integer  "category"
+    t.integer  "minutes_per_week"
+    t.integer  "minutes_this_week"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dreams", ["category"], name: "index_dreams_on_category", using: :btree
+  add_index "dreams", ["user_id"], name: "index_dreams_on_user_id", using: :btree
 
   create_table "gratitudes", force: true do |t|
     t.integer  "user_id"
@@ -65,8 +79,10 @@ ActiveRecord::Schema.define(version: 20140220002025) do
     t.datetime "updated_at"
     t.string   "facebook_id",            limit: 12
     t.boolean  "has_stub_password",                 default: false
+    t.string   "auth_token"
   end
 
+  add_index "users", ["auth_token"], name: "index_users_on_auth_token", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

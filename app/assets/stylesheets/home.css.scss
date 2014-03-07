@@ -11,7 +11,7 @@
 @import "mixins/colors";
 
 .brain-container {
-  width: 730px;
+  width: 770px;
   margin: 25px auto;
   position: relative;
   border-top: 1px solid #ddd;
@@ -198,8 +198,8 @@
 }
 
 .action-of-day, .gratitude-complete {
-  width: 850px;
-  margin: 35px auto 20px;
+  width: 900px;
+  margin: 15px auto 20px;
   font-family: 'Lato', arial, helvetica, sans-serif;
   font-size: 32px;
   text-align: center;
@@ -208,14 +208,19 @@
     color: $logo_green;
     font-size: 34px;
   }
-  b {
+  .blue {
     color: $love_blue;
+  }
+  .red {
+    color: $love_red;
   }
   textarea {
     margin-top: 22px;
     width: 450px;
     height: 60px;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 5px 10px;  
   }
   .action-small-text {
     font-size: 20px;
@@ -286,3 +291,17 @@
     left: -27px;
   }
 }
+
+.action-text-explain {
+  font-size: 21px;
+  strong { font-size: 22px;}
+}
+
+.rewire-more {
+  width: 205px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+// bootstrap css Angular integration, these styles fix the empty href issue.
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

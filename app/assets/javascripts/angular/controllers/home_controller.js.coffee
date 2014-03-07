@@ -46,7 +46,7 @@ if gon.logged_in
 		$scope.saveSendlove = ->
 			if this.sendloveBody
 				$scope.actionComplete = true
-				Sendlove(this.sendloveBody, this.sendloveName, this.sendloveEmail).save()
+				Sendlove(this.sendloveBody, this.sendloveName, this.sendloveEmail, null).save()
 				$scope.brain.points += 100
 			return
 	]

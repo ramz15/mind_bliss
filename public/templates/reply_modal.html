@@ -1,0 +1,17 @@
+<div class="mindbliss-modal">
+  <div class="reply-modal">
+    <div class="dash-logo modal-logo"></div>
+    <div class="modal-text">
+      Hardwire your <div class="science-brain reply-brain"></div> for a fulfilling life.
+    </div><br>
+    <div class="modal-pw">
+      Enter a password to save <span class="blue">{{senderName}}'s</span> kind words and reply:
+    </div>
+    <form id="reply_password" name="replySignup" ng-submit="saveSignup()">
+      <input type="password" class="reply-password" placeholder="Password" ng-model="password">
+      <input type="hidden" class="action-name" ng-model="name" >
+      <input type="hidden" ng-model="sendloveUserId" class="action-name sendlove-email" ng-value="senderId"><br>
+      <input type="submit" class="button submit-button reply-password-btn" value="Save Love">
+    </form>
+  </div>
+</div>

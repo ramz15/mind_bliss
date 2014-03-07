@@ -1,4 +1,4 @@
-class Api::V1::BrainsController < ActionController::Base
+class Api::V1::BrainsController < Api::V1::ApiBaseController
 	protect_from_forgery
 
 	def update

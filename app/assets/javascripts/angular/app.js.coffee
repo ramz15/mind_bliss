@@ -3,21 +3,20 @@ if gon.logged_in
   	# "ngResource"
   	"ngRoute"
   	"mindblissServices"
+    "ui.bootstrap"
   ])
 
 
   # setup angular routes 
   @mindbliss.config(['$routeProvider', ($routeProvider) ->
     $routeProvider.
-      when('/sendlove_reply', {
+      when('/reply', {
         templateUrl: '/templates/sendlove_reply.html',
         controller: 'ReplyCtrl'
       }).
       otherwise({
-        templateUrl: '/templates/sendlove_reply.html',
-        controller: 'ReplyCtrl'
-        # templateUrl: '/templates/home.html',
-        # controller: 'HomeCtrl'
+        templateUrl: '/templates/home.html',
+        controller: 'HomeCtrl'
       }) 
   ])
 

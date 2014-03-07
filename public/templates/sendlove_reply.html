@@ -1,3 +1,5 @@
+<div ng-if="notLoggedIn" ng-include="'/templates/reply_modal.html'"></div>
+
 <div class="row">
   
   <a class="logout" data-method="delete" href="/users/sign_out" rel="nofollow">Logout</a>   
@@ -7,14 +9,14 @@
 <div class="dash-logo"></div>
 
 <div ng-hide="actionComplete" class="action-of-day">
-	<div class="action-text"><b>{{senderName}}</b> <strong>loves</strong> you very much:
+	<div class="action-text"><strong>{{name}}</strong>, <span class="blue">{{senderName}}</span> told us "I <span class="red">love</span> <strong>{{name}}</strong>...
 		<div class="sendlove-body">
-			{{body}}
+			{{body}}"
 		</div><br>
 	</div>
 	<form id="action_form" name="sendloveForm" ng-submit="saveSendlove()">
 		<input type="hidden" class="action-name" ng-model="sendloveName" ng-value="name">
-		<div class="action-text">What do you <strong>love</strong> about <b>{{senderName}}</b>?</div>
+		<div class="action-text">What do you <span class="red">love</span> about <span class="blue">{{senderName}}</span>?</div>
 		<textarea id="action_text" class="sendlove-textarea reply-textarea" ng-model="sendloveBody"></textarea><br>
     <input type="hidden" ng-model="sendloveUserId" class="action-name sendlove-email" ng-value="senderId"><br>
 		<input type="submit" class="button submit-button sendlove-reply-submit" value="Send Love">
@@ -49,7 +51,7 @@
 <!-- TEMPLATE after ACTION is COMPLETE -->
 <div ng-show="actionComplete" class="gratitude-complete">
 	<div class="hardwire">Hardwire Happiness:</div>
-	<div class="habit">Feel the <strong>love!</strong> You just <b>hardwired</b> a <strong>strong connection</strong> of <strong>love</strong> and <strong>happiness</strong> in <b>{{name}}'s</b> brain and your own!</div>
+	<div class="habit">Feel the <strong>love!</strong> You just <span class="blue">hardwired</span> a <strong>strong connection</strong> of <strong>love</strong> and <strong>happiness</strong> in <span class="blue">{{name}}'s</span> brain and your own!</div>
 
 	<!-- 	<div class="cells-activated">100 of your positive brain cells have been activated!</div> -->
 

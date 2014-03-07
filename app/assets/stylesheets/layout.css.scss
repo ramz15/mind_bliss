@@ -1,12 +1,19 @@
 @import "bootstrap";
+@import "mixins/colors";
 
 body { 
   padding: 0px;
   margin: 0px;
+  font-family: 'Lato', arial, helvetica, sans-serif;
   
 }
 
-.modal-background {
+.modal-box {
+  display: none; 
+  z-index: 1001;
+}
+
+.mindbliss-modal {
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
@@ -15,7 +22,9 @@ body {
   top: 0px;
 }
 
-.modal-box {
-  display: none; 
-  z-index: 1001;
+.blue {
+  color: $love_blue;
+}
+.red {
+  color: $love_red;
 }

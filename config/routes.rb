@@ -29,10 +29,13 @@ MindBliss::Application.routes.draw do
 
   match '/gratitudes', to: 'gratitudes#create', via: 'post'
 
-  resources :brains
-  resources :sendloves
+  # SendLove routes
+  resources :sendloves, :only => [:create]
+  # SendLove Reply
+  get '/replylove' => 'sendloves#reply'
 
-  get '/sendlove_reply' => 'sendloves#reply'
+  # Dream routes
+  resources :dreams, :only => [:create]
 
   namespace :inbound do
     match '/sendlove', to: 'inbound_emails#sendlove', via: 'post'
@@ -43,6 +46,7 @@ MindBliss::Application.routes.draw do
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
       resources :brains, :only => [:update]
+      resources :api_users, :only => [:create]
       # resources :tokens, :only => [:create, :destroy]
     end
 

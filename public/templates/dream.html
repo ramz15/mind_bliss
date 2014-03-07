@@ -1,11 +1,14 @@
 <div ng-hide="actionComplete" class="action-of-day">
-	<div class="action-text">I am <strong>Grateful</strong> for...</div>
+	<div class="action-text-explain">
+		Pursuing a <strong>Goal</strong> that you enjoy is a big factor in life <span class="blue">fulfillment</span> and <span class="blue">happiness</span>.
+	</div><br>
+	<div class="action-text">
+		Name a <strong>Dream</strong> you want to pursue:
+	</div>
 
-	<form id="action_form" name="gratitudeForm" ng-submit="saveGratitude()">
-		<textarea id="action_text" ng-model="gratitudeBody" required></textarea><br>
-<!-- 		<span class="error" ng-show="gratitudeForm.gratitude.$error.required">
-      Can't be empty!</span><br> -->
-		<input type="submit" class="button submit-button" value="Hardwire Happiness">
+	<form id="action_form" name="dreamForm" ng-submit="saveDream()">
+		<input type="text" class="dream-input" ng-model="dreamTitle" placeholder="Dream Big" required><br>
+		<input type="submit" class="button submit-button dream-button" value="CREATE YOUR DREAM">
 	</form>
 
 	<div class="science-box">
@@ -37,9 +40,15 @@
 <!-- TEMPLATE after ACTION is COMPLETE -->
 <div ng-show="actionComplete" class="gratitude-complete">
 	<div class="hardwire">Hardwire Happiness:</div>
-	<div class="habit">Life is <strong>Good</strong>, throughout the day breathe and deeply appreciate...</div>
+	<div class="habit">Congrats on taking the first step to achieving your <strong>Dream</strong>! Every minute you spend working towards your <strong>Dream</strong> activates pathways in your <span class="blue">Brain</span> that creates a feeling of <span class="blue">meaning</span> in your life.</div>
 
-	<div class="gratitude-body">{{ gratitudeBody }}</div>
+	<div class="habit">
+		Any amount of time you spend working towards your <strong>Dream</strong> makes a difference. Start pursuing your <strong>Dream</strong> <span class="blue">NOW</span> and imagine being successful at:
+	</div>
+
+	<div class="gratitude-body">{{ dreamTitle }}</div>
+
+	<div class="rewire-more">Rewire your <div class="science-brain reply-brain"></div> some more...</div>
 
 <!-- 	<div>
 		Wire happiness by absorbing all that is good throughout the day.

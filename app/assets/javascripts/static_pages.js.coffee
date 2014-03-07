@@ -15,7 +15,7 @@ jQuery ->
     $('.signup').css('width', '264px')
     
   # modal background variable
-  modalBackground = $('<div></div>').addClass('modal-background')
+  modalBackground = $('<div></div>').addClass('mindbliss-modal')
   
   # show modal signup box on click of button
   $('.signup-button').click (e) ->
@@ -24,10 +24,10 @@ jQuery ->
     $('#signup_box').fadeIn(300)
     
     # remove modal and box on click anywhere outside of the box
-    if $('.modal-background').length
-      $('.modal-background').click (e) ->
+    if $('.mindbliss-modal').length
+      $('.mindbliss-modal').click (e) ->
         $('.modal-box').fadeOut(200)
-        $('.modal-background').remove()
+        $('.mindbliss-modal').remove()
   
   # show modal login box on click of button
   $('.login-button').click (e) ->
@@ -36,7 +36,7 @@ jQuery ->
     $('#login_box').fadeIn(300)
 
     # remove modal and box on click anywhere outside of the box
-    if $('.modal-background').length
-      $('.modal-background').click (e) ->
+    if $('.mindbliss-modal').length
+      $('.mindbliss-modal').click (e) ->
         $('.modal-box').fadeOut(200)
-        $('.modal-background').remove()
+        $('.mindbliss-modal').remove()

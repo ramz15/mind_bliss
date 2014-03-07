@@ -5,7 +5,7 @@ class Sendlove < ActiveRecord::Base
 	def send_email(sender_first_name, sender_last_name, sender_id)
 		require 'mandrill'
 
-		full_name = sender_first_name + " " + sender_last_name
+		full_name = sender_last_name ? sender_first_name + " " + sender_last_name : sender_first_name
 
 		begin
 	    mandrill = Mandrill::API.new Rails.application.config.mandrill_api_key

@@ -6,12 +6,18 @@ class SendlovesController < ApplicationController
 		@user = current_user
 		sendlove_text = params[:body]
 		sendlove_email = params[:email]
+    send_to_id = params[:send_to_id]
 
 		# remove "my " from the string
 		sendlove_name = params[:name]
 
+    if sendlove_email.blank?
+      sendlove_email = User.find_by_id(send_to_id).email
+    end
+
 		# save in gratitude table
 		@sendlove = Sendlove.new(:user_id => @user.id,
+                             :receiver_id => send_to_id,
                              :body => sendlove_text,
                              :email => sendlove_email,
                              :name => sendlove_name)
@@ -33,9 +39,12 @@ class SendlovesController < ApplicationController
     end
 	end
 
+  # sendlove replies here, linked from the sendlove email
   def reply
-  	gon.user = {"first_name" => params[:name]}
+    @title = "MindBliss | Send Love Reply"
+    gon.not_logged_in = user_signed_in? ? false : true
     gon.brain = {"points" => 0}
+    # 
     gon.logged_in = true
   end
 
