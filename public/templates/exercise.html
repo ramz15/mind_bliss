@@ -1,0 +1,58 @@
+<div ng-hide="actionComplete" class="action-of-day">
+	<div class="action-text exercise-text"><strong>
+		Exercise</strong> to your <span class="blue">Brain</span> is like <strong>miracle grow</strong> and <strong>water</strong> to a garden.
+	</div>
+	<div class="exercise-benefits">
+		Top 5 ways <strong>exercise</strong> improves your <span class="blue">Brain</span>:<br>
+		<ol>
+			<li>Makes your Brain <strong>Grow</strong></li>
+			<li>Makes you <strong>Happier</strong></li>
+			<li>Reduces Stress</li>
+			<li>Makes you <strong>Smarter</strong></li> 
+			<li>Keeps you <strong>Young</strong></li> 
+		</ol>
+	</div>
+
+	<form id="action_form" name="exerciseForm" ng-submit="saveExercise()">
+		<div class="exercise-benefits exercise-rec">
+			(Doctors recommend at least 30 minutes of <strong>exercise</strong> per day.)
+		</div>
+		<div>
+			How many <span class="blue">minutes</span> of <strong>exercise</strong> have you completed this week? 
+		</div>
+		<input type="number" class="exercise-input" ng-model="exerciseMinutes" placeholder="Minutes"><br>
+		<input type="submit" class="button submit-button" value="GROW YOUR BRAIN">
+	</form>
+
+	<div class="science-box">
+	</div>
+	<div class="proof-box">
+		<a href="http://www.rd.com/slideshows/6-ways-exercise-makes-your-brain-better" target="_blank">
+			<div class="science-brain"></div>
+			Science
+		</a>
+	</div>
+
+<!-- 	<div class="points-box">
+		<div class="plus">+</div>
+		<strong>100</strong></br> Brain Points
+	</div> -->
+</div>
+
+<!-- ANIMATIONS after COMPLETE -->
+<div class="points-anime" ng-class="{startanimate: actionComplete}" >100</div>
+
+<!-- TEMPLATE after ACTION is COMPLETE -->
+<div ng-show="actionComplete" class="gratitude-complete">
+	<div class="hardwire">Hardwire Happiness:</div>
+	<div class="habit">Feel your brain <strong>grow!</strong> You just <span class="blue">hardwired</span> your <span class="blue">Brain</span> to become <strong>happier</strong>, <strong>smarter</strong>, <strong>live longer</strong> and <strong>bigger!</strong></div>
+
+	<div ng-show="actionComplete" class="rewire-more">Rewire your <div class="science-brain reply-brain"></div> more...</div>
+
+
+<!-- 	<div class="gratitude-body"></div>
+ -->
+
+	<!-- 	<div class="cells-activated">100 of your positive brain cells have been activated!</div> -->
+
+</div>

@@ -60,3 +60,13 @@ if gon.logged_in
             method: "POST"
         )
   ]
+
+  mindblissServices.factory "Exercise", [
+    "$resource"
+    ($resource) ->
+      return (minutes) ->
+        $resource("/exercises.json", {minutes: minutes},
+          save:
+            method: "POST"
+        )
+  ]

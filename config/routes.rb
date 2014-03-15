@@ -37,6 +37,9 @@ MindBliss::Application.routes.draw do
   # Dream routes
   resources :dreams, :only => [:create]
 
+  # Exercise routes
+  resources :exercises, :only => [:create]
+
   namespace :inbound do
     match '/sendlove', to: 'inbound_emails#sendlove', via: 'post'
   end

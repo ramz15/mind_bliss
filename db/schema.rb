@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307001157) do
+ActiveRecord::Schema.define(version: 20140314234502) do
 
   create_table "brains", force: true do |t|
     t.integer  "user_id"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20140307001157) do
 
   add_index "dreams", ["category"], name: "index_dreams_on_category", using: :btree
   add_index "dreams", ["user_id"], name: "index_dreams_on_user_id", using: :btree
+
+  create_table "exercises", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "minutes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "exercises", ["user_id"], name: "index_exercises_on_user_id", using: :btree
 
   create_table "gratitudes", force: true do |t|
     t.integer  "user_id"

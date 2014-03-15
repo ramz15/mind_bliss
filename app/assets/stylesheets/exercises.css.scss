@@ -1,0 +1,38 @@
+@import "mixins/css3";
+@import "mixins/colors";
+
+.exercise-benefits {
+	width: 500px;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 22px;
+	line-height: 36px;
+	font-size: 24px;
+	padding: 10px 0px;
+	ol {
+		text-align: left;
+		margin-left: 145px;
+		li { line-height: 28px; }
+	}
+}
+
+.exercise-text {
+	font-size: 31px;
+}
+
+.exercise-input {
+	font-size: 32px !important;
+	height: 57px !important;
+	line-height: 34px !important;
+	padding: 4px 0px 4px 10px !important;
+	width: 153px;
+	margin: 15px 0px -4px !important;
+}
+
+.exercise-rec {
+	width: 630px;
+	font-size: 20px;
+	color: #666;
+	margin-top: -30px;
+	margin-bottom: 10px;
+}
