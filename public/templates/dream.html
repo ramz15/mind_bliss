@@ -1,14 +1,19 @@
 <div ng-hide="actionComplete" class="action-of-day">
 	<div class="action-text-explain">
-		Pursuing a <strong>Goal</strong> that you enjoy is a big factor in life <span class="blue">fulfillment</span> and <span class="blue">happiness</span>.
+		Pursuing a <strong>Goal</strong> that you <span class="blue">enjoy</span> is a big factor in life <strong>fulfillment</strong> and <strong>happiness</strong>.
 	</div><br>
-	<div class="action-text">
+	<div class="action-text dream-action">
 		Name a <strong>Dream</strong> you want to pursue:
 	</div>
 
 	<form id="action_form" name="dreamForm" ng-submit="saveDream()">
 		<input type="text" class="dream-input" ng-model="dreamTitle" placeholder="Dream Big" required><br>
-		<input type="submit" class="button submit-button dream-button" value="CREATE YOUR DREAM">
+		<div class="dream-min-txt">
+			How many <span class="blue">minutes</span> per <span class="blue">day</span> do you want work on your <strong>Dream</strong>?
+		</div>
+		<input type="number" class="dream-minutes-input" ng-model="dreamMinutesGoal" placeholder="Minutes"><br>
+
+		<input type="submit" class="button submit-button dream-button" value="LIVE YOUR DREAM">
 	</form>
 
 	<div class="science-box">
@@ -21,7 +26,7 @@
 		<div class="science-stat"><strong>Optimism</strong><div class="cell"></div> </div>
 	</div> -->
 	<div class="proof-box">
-		<a href="http://www.psychologytoday.com/blog/prefrontal-nudity/201211/the-grateful-brain" target="_blank">
+		<a href="http://yourbrainhealth.com.au/your-lifes-purpose-why-finding-your-passion-is-essential-to-maintaining-brain-health/" target="_blank">
 			<div class="science-brain"></div>
 			Science
 		</a>
@@ -39,18 +44,33 @@
 
 <!-- TEMPLATE after ACTION is COMPLETE -->
 <div ng-show="actionComplete" class="gratitude-complete">
-	<div class="hardwire">Hardwire Happiness:</div>
-	<div class="habit">
-		Congrats on taking the first step to achieving your <strong>Dream</strong>!<br> 
-		Every minute you spend working towards your <strong>Dream</strong> activates pathways in your <span class="blue">Brain</span> that get you one step closer to success and creates a feeling of <span class="blue">meaning</span> in your life.</div>
+	<div class="hardwire">Hardwire Success and Meaning:</div>
+  	<div class="alert alert-success success alert-anime" ng-class="{startanimate: actionComplete}">
+  		Congrats! Start working on and tracking <strong>{{ dreamTitle }}</strong> <span class="blue">NOW</span>. Every minute spent brings you closer to <span class="blue">success</span> and creates <span class="blue">meaning</span> in your life.
+	</div>
 
-	<div class="habit">
+	<h2>{{dreamTitle}}</h2>
+
+	<form id="action_form" class="dream-track-form" name="dreamTrackForm" ng-submit="saveDreamGoal()">
+		<div class="side-note">
+			<span class="blue">Science</span> proves that breaking big goals into <span class="blue">smaller goals</span> increases <strong>success</strong>.
+		</div>
+		<div class="med-text">
+			Start with a small goal you can accomplish in <span class="blue">30 minutes</span>.
+		</div>
+		<input class="dream-input" type="text" ng-model="dreamSmallGoal" placeholder="Small Goal"><br>
+		<input type="submit" class="button submit-button" value="START YOUR DREAM">
+	</form>
+
+
+
+	<div class="rewire-more">Rewire your <div class="science-brain reply-brain"></div> more...</div>
+
+<!-- 		<div class="habit">
 		Start pursuing your <strong>Dream</strong> <span class="blue">NOW</span> and imagine where you could be in 5 years working hard on:
 	</div>
 
-	<div class="gratitude-body">{{ dreamTitle }}</div>
-
-	<div class="rewire-more">Rewire your <div class="science-brain reply-brain"></div> more...</div>
+	<div class="gratitude-body">{{ dreamTitle }}</div> -->
 
 <!-- 	<div>
 		Wire happiness by absorbing all that is good throughout the day.

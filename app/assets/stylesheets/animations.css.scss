@@ -50,4 +50,54 @@
 100% {font-size: 2px;}
 }
 
+@-moz-keyframes pointsanimate /* Safari and Chrome */
+{
+0%   {opacity: 1; font-size: 2px}
+50%  {font-size: 150px;}
+100% {font-size: 2px;}
+}
+
+@-o-keyframes pointsanimate /* Safari and Chrome */
+{
+0%   {opacity: 1; font-size: 2px}
+50%  {font-size: 150px;}
+100% {font-size: 2px;}
+}
+
 // .brain-activity.start-animate
+
+
+// alerts animations
+.alert-anime.startanimate {
+  -webkit-animation:alertanimate 9s;
+  animation:alertanimate 9s;
+  opacity: 0;
+}
+
+@keyframes alertanimate
+{
+0%   {opacity: 1;}
+70%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+@-webkit-keyframes alertanimate /* Safari and Chrome */
+{
+0%   {opacity: 1;}
+70%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+@-moz-keyframes alertanimate {
+0%   {opacity: 1;}
+70%  {opacity: 1;}
+100% {opacity: 0;}
+}
+ 
+@-o-keyframes alertanimate {
+0%   {opacity: 1;}
+70%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+

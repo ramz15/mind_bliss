@@ -23,6 +23,7 @@ class DreamsController < ApplicationController
     respond_to do |format|
       format.json {
         res = { :success => success }
+        res[:dream_id] = @dream.id
         render :json => res.as_json
       }
       format.js

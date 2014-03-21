@@ -61,6 +61,17 @@ if gon.logged_in
         )
   ]
 
+  mindblissServices.factory "Dreamgoal", [
+    "$resource"
+    ($resource) ->
+      return (name) ->
+        $resource("/dream_goals.json", {name: name},
+          save:
+            method: "POST"
+        )
+  ]
+  
+
   mindblissServices.factory "Exercise", [
     "$resource"
     ($resource) ->

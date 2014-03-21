@@ -1,5 +1,5 @@
 if gon.logged_in
-	@mindbliss.controller 'HomeCtrl', ['$scope', "Gratitude", "Brain", "Sendlove", "Dream", "Exercise", ($scope, Gratitude, Brain, Sendlove, Dream, Exercise) ->
+	@mindbliss.controller 'HomeCtrl', ['$scope', "Gratitude", "Brain", "Sendlove", "Dream", "Dreamgoal", "Exercise", ($scope, Gratitude, Brain, Sendlove, Dream, Dreamgoal, Exercise) ->
 		# set $scope objects user and brain
 		$scope.user = gon.user
 		$scope.brain = gon.brain
@@ -24,8 +24,8 @@ if gon.logged_in
 			# , { name: 'forgive', url: '/templates/forgive.html'} 
 			]
 		# load the template matching the action the user is on
-		$scope.template = $scope.templates[gon.brain.action_count%4]
-		# $scope.template = $scope.templates[3]
+		# $scope.template = $scope.templates[gon.brain.action_count%4]
+		$scope.template = $scope.templates[2]
 
 		# save gratitudes
 		$scope.saveGratitude = ->
@@ -50,13 +50,28 @@ if gon.logged_in
 				$scope.brain.points += 100
 			return
 
-		# save Dream
+		# save Dreams
 		$scope.saveDream = ->
 			if this.dreamTitle
 				$scope.actionComplete = true
-				Dream(this.dreamTitle, null).save()
+				Dream(this.dreamTitle, this.dreamMinutesGoal).save ((data) ->
+				  $scope.dreamId = data.dream_id
+				  return
+				), (err) ->
+				  $scope.showError = true
+				  return
 				$scope.brain.points += 100
 			return
+
+		$scope.dreamGoalComplete = false
+		$scope.saveDreamGoal = ->
+			if this.saveDreamGoal
+				console.log this.dreamId
+				$scope.dreamGoalComplete = true
+			# Dreamgoal(this.dreamTitle, this.dreamId).save()
+				$scope.brain.points += 100
+
+
 
 		# save Exercise
 		$scope.saveExercise = ->
